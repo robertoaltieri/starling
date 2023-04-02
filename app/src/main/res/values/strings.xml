@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">App</string>
+    <string name="error">Error!</string>
+    <string name="roundup">%1$s %2$s</string>
+    <string name="roundup_saved">%1$s %2$s saved</string>
+    <string name="save_in_goal">Save in goal</string>
+    <string name="tokens_updated">Tokens updated</string>
+</resources>

@@ -1,0 +1,14 @@
+dependencies {
+    implementation Compose.navigation
+    implementation Compose.ui
+    implementation Compose.activity
+    implementation Compose.uiGraphics
+    implementation Compose.uiToolingPreview
+    implementation Compose.material3
+    debugImplementation Compose.uiTooling
+
+    implementation Image.image
+    implementation Image.imageCompose
+    implementation Image.imageComposeBase
+    implementation 'androidx.glance:glance:1.0.0-alpha05'
+}

@@ -1,0 +1,10 @@
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+apply from: "../../dependencies/kotlin-modules.gradle"
+apply from: "../../dependencies/unittest.gradle"
+
+dependencies {
+}

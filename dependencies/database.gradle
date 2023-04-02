@@ -1,0 +1,5 @@
+dependencies {
+    implementation Room.room
+    implementation Room.runtime
+    kapt Room.compiler
+}

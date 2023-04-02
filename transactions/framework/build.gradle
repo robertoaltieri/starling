@@ -1,0 +1,18 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.altieri.starling.transactions.framework'
+}
+
+apply from: "../../dependencies/android-modules.gradle"
+apply from: "../../dependencies/network.gradle"
+apply from: "../../dependencies/unittest.gradle"
+apply from: "../../dependencies/androidtest.gradle"
+
+dependencies {
+    implementation project(path: ':transactions:data')
+}

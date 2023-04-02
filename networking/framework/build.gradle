@@ -1,0 +1,35 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.altieri.starling.networking.framework'
+    defaultConfig {
+        Properties properties = new Properties()
+        properties.load(new FileInputStream("access-token.properties"))
+        def clientId = properties["client_id"]
+        def clientSecret = properties["client_secret"]
+        def accessToken = properties["access_token"]
+        def refreshToken = properties["refresh_token"]
+        buildConfigField("String", "STARLING_CLIENT_ID", "\"$clientId\"")
+        buildConfigField("String", "STARLING_CLIENT_SECRET", "\"$clientSecret\"")
+        buildConfigField("String", "STARLING_ACCESS_TOKEN", "\"$accessToken\"")
+        buildConfigField("String", "STARLING_REFRESH_TOKEN", "\"$refreshToken\"")
+    }
+}
+
+apply from: "../../dependencies/android-modules.gradle"
+apply from: "../../dependencies/network.gradle"
+apply from: "../../dependencies/unittest.gradle"
+apply from: "../../dependencies/androidtest.gradle"
+
+dependencies {
+    implementation DataStore.preferences
+    implementation Other.jwtDecode
+
+    implementation project(path: ':networking:domain')
+    implementation project(path: ':datetime:bl')
+    testImplementation project(path: ':coretesting')
+}

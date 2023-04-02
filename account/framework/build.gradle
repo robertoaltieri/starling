@@ -1,0 +1,20 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.altieri.starling.account.framework'
+}
+
+apply from: "../../dependencies/android-modules.gradle"
+apply from: "../../dependencies/network.gradle"
+apply from: "../../dependencies/unittest.gradle"
+apply from: "../../dependencies/androidtest.gradle"
+
+dependencies {
+    implementation project(path: ':account:data')
+    implementation project(path: ':database:framework')
+    implementation project(path: ':account:bl')
+    implementation project(path: ':common:bl')
+}

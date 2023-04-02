@@ -1,0 +1,67 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
+
+apply from: "../dependencies/android-modules.gradle"
+apply from: "../dependencies/core.gradle"
+apply from: "../dependencies/di.gradle"
+apply from: "../dependencies/ui.gradle"
+apply from: "../dependencies/network.gradle"
+apply from: "../dependencies/androidtest.gradle"
+
+android {
+    namespace 'com.altieri.starling'
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.2"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'keystore'
+            keyPassword 'passw123'
+            storeFile file('../app-keystore')
+            storePassword 'passw123'
+        }
+        debug {
+            keyAlias 'keystore'
+            keyPassword 'passw123'
+            storeFile file('../app-keystore')
+            storePassword 'passw123'
+        }
+    }
+}
+
+dependencies {
+    implementation platform(Compose.bom)
+    androidTestImplementation AndroidX.navigationTesting
+    testImplementation UnitTest.junit
+
+    androidTestImplementation Dagger.hiltAndroidTesting
+    kaptAndroidTest Dagger.hiltAndroidCompiler
+
+    debugImplementation UnitTest.uiTestManifest
+    implementation Room.runtime
+
+    implementation project(path: ':transactions:bl')
+    implementation project(path: ':transactions:data')
+    implementation project(path: ':transactions:presentation')
+    implementation project(path: ':transactions:framework')
+    implementation project(path: ':networking:domain')
+    implementation project(path: ':networking:api')
+    implementation project(path: ':networking:framework')
+    implementation project(path: ':account:bl')
+    implementation project(path: ':account:data')
+    implementation project(path: ':account:presentation')
+    implementation project(path: ':account:framework')
+    implementation project(path: ':database:framework')
+    implementation project(path: ':datetime:bl')
+    implementation project(path: ':common:bl')
+}

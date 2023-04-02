@@ -1,0 +1,7 @@
+dependencies {
+    testImplementation UnitTest.junit
+    testImplementation UnitTest.kotlinJunit
+    testImplementation UnitTest.coroutinesTest
+    testImplementation UnitTest.mockk
+    testImplementation UnitTest.mockitoCore
+}

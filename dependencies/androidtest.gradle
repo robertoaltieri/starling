@@ -1,0 +1,8 @@
+dependencies {
+    androidTestImplementation platform(Compose.bom)
+    androidTestImplementation UnitTest.junit
+    androidTestImplementation UnitTest.junitExt
+    androidTestImplementation InstrumentationTest.espresso
+    androidTestImplementation InstrumentationTest.uiTest
+    androidTestImplementation InstrumentationTest.coreTesting
+}

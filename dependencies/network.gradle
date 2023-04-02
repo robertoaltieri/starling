@@ -1,0 +1,11 @@
+dependencies {
+    implementation Retrofit.retrofit
+    implementation Retrofit.moshi
+    implementation Retrofit.moshiKotlin
+    implementation Retrofit.moshiConverter
+    implementation OkHttp.okHttp
+    implementation OkHttp.interceptor
+
+    implementation InstrumentationTest.mockWebServer
+
+}

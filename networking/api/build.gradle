@@ -1,0 +1,19 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.altieri.starling.networking.api'
+}
+
+apply from: "../../dependencies/android-modules.gradle"
+apply from: "../../dependencies/unittest.gradle"
+apply from: "../../dependencies/androidtest.gradle"
+apply from: "../../dependencies/network.gradle"
+
+dependencies {
+    implementation project(path: ':account:framework')
+    implementation project(path: ':transactions:framework')
+}

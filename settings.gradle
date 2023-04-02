@@ -1,0 +1,33 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "starling"
+
+include ':app'
+include ':di'
+include ':coretesting'
+include ':networking:domain'
+include ':networking:api'
+include ':networking:framework'
+include ':transactions:bl'
+include ':transactions:data'
+include ':transactions:presentation'
+include ':transactions:framework'
+include ':account:bl'
+include ':account:data'
+include ':account:presentation'
+include ':account:framework'
+include ':database:framework'
+include ':datetime:bl'
+include ':common:bl'

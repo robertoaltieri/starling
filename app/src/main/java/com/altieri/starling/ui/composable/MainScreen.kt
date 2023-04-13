@@ -43,7 +43,6 @@ fun MainScreen(
                     arguments = DeepLinks.OnNewTokens.ON_NEW_TOKENS_DEEP_LINK_ARGS,
                     deepLinks = listOf(navDeepLink {
                         uriPattern = DeepLinks.OnNewTokens.URI_PATTERN
-
                     })
                 ) { backStackEntry ->
                     TokenUpdatesScreen(backStackEntry, onNewTokens)

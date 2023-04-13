@@ -1,6 +1,7 @@
 dependencies {
     implementation Compose.navigation
     implementation Compose.ui
+    implementation Compose.runtimeCompose
     implementation Compose.activity
     implementation Compose.uiGraphics
     implementation Compose.uiToolingPreview
@@ -10,5 +11,4 @@ dependencies {
     implementation Image.image
     implementation Image.imageCompose
     implementation Image.imageComposeBase
-    implementation 'androidx.glance:glance:1.0.0-alpha05'
 }

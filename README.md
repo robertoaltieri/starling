@@ -32,7 +32,6 @@ Currently it doesn't refresh the tokens with an alarm.
 
 ## Known issues:
 - The coverage for for the integration and ui automated test is small. There are missing unit tests.
-- I started building what's necessary to run UI automated tests not in isolation (mocking the web server) but I haven't used it yet
 - This implementation does not refresh the token in the background so if you don't perform network operations for too long the access token will expire
 - I'm not handling the obfuscation
 - For now all the errors are handled showing a generic error message

@@ -17,7 +17,6 @@ android {
 
 dependencies {
     implementation Core.viewModel
-    testImplementation Core.viewModel
 
     implementation project(path: ':transactions:bl')
     implementation project(path: ':coretesting')

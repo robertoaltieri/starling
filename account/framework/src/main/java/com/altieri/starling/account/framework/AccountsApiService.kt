@@ -27,7 +27,6 @@ interface AccountsApiService {
     suspend fun savingGoals(
         @Path(value = "accountUid") accountUid: String
     ): SavingGoalsRaw
-
 }
 
 // there are more info here but I'm considering only the savingsGoalUid

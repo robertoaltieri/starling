@@ -37,18 +37,24 @@ android {
             storePassword 'passw123'
         }
     }
+
+    testOptions {
+        execution 'ANDROIDX_TEST_ORCHESTRATOR'
+    }
+
 }
 
 dependencies {
     implementation platform(Compose.bom)
-    androidTestImplementation AndroidX.navigationTesting
-    testImplementation UnitTest.junit
+    implementation Room.runtime
+    implementation DataStore.preferences
 
+    testImplementation UnitTest.junit
+    androidTestImplementation AndroidX.navigationTesting
     androidTestImplementation Dagger.hiltAndroidTesting
     kaptAndroidTest Dagger.hiltAndroidCompiler
 
     debugImplementation UnitTest.uiTestManifest
-    implementation Room.runtime
 
     implementation project(path: ':transactions:bl')
     implementation project(path: ':transactions:data')
@@ -64,4 +70,8 @@ dependencies {
     implementation project(path: ':database:framework')
     implementation project(path: ':datetime:bl')
     implementation project(path: ':common:bl')
+
+    androidTestImplementation project(path: ':common:framework')
+    androidTestImplementation project(path: ':networking:framework')
+
 }

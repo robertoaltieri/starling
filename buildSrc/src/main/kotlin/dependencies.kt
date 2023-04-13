@@ -7,7 +7,7 @@ object Core {
 
     object Version {
         const val coroutineCore = "1.6.0"
-        const val viewModel = "2.6.0"
+        const val viewModel = "2.6.1"
     }
 }
 
@@ -27,8 +27,8 @@ object AndroidX {
     object Version {
         const val core = "1.8.0"
         const val multidex = "2.0.1"
-        const val lifecycleRuntime = "2.3.1"
-        const val navigationTesting = "2.5.3"
+        const val lifecycleRuntime = "2.6.1"
+        const val navigationTesting = "2.6.0-alpha09"
     }
 }
 
@@ -38,11 +38,13 @@ object Dagger {
     const val hiltCompiler = "com.google.dagger:hilt-compiler:${Version.hilt}"
     const val hiltAndroidTesting = "com.google.dagger:hilt-android-testing:${Version.hilt}"
     const val navigationCompose = "androidx.hilt:hilt-navigation-compose:${Version.navigationCompose}"
+    const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:${Version.viewModelCompose}"
     const val androidxHiltCompiler = "androidx.hilt:hilt-compiler:${Version.androidxHiltCompiler}"
     object Version {
-        const val hilt = "2.44"
-        const val hiltCompiler = "2.44"
-        const val navigationCompose = "1.0.0"
+        const val hilt = "2.45"
+        const val hiltCompiler = "2.45"
+        const val navigationCompose = "1.1.0-alpha01"
+        const val viewModelCompose = "2.5.1"
         const val androidxHiltCompiler = "1.0.0"
     }
 }
@@ -54,6 +56,7 @@ object InstrumentationTest {
     const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Version.mockWebServer}"
     const val testMonitor = "androidx.test:monitor:${Version.testMonitor}"
     const val coreTesting = "android.arch.core:core-testing:${Version.coreTesting}"
+    const val orchestrator = "androidx.test:orchestrator:${Version.orchestrator}"
 
     object Version {
         const val espresso = "3.5.1"
@@ -61,11 +64,13 @@ object InstrumentationTest {
         const val mockWebServer = "4.0.1"
         const val testMonitor = "1.5.0"
         const val coreTesting = "1.1.1"
+        const val orchestrator = "1.4.2"
     }
 }
 
 object Compose {
     const val bom = "androidx.compose:compose-bom:${Version.bom}"
+    const val runtimeCompose = "androidx.lifecycle:lifecycle-runtime-compose:${Version.viewModelCompose}"
     const val activity = "androidx.activity:activity-compose:${Version.activity}"
     const val uiTooling = "androidx.compose.ui:ui-tooling"
     const val material3 = "androidx.compose.material3:material3"
@@ -77,7 +82,7 @@ object Compose {
     object Version {
         const val bom = "2022.10.00"
         const val activity = "1.5.1"
-        const val viewModelCompose = "2.5.1"
+        const val viewModelCompose = "2.6.0"
         const val navigation = "2.5.3"
     }
 }
@@ -166,3 +171,4 @@ object Other {
         const val jwtDecode = "2.0.1"
     }
 }
+

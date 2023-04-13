@@ -7,6 +7,7 @@ import io.mockk.impl.annotations.MockK
 import org.junit.Before
 import org.junit.Test
 import java.util.Calendar
+import java.util.TimeZone
 import kotlin.test.assertEquals
 
 class AppDateTimeTest {
@@ -48,9 +49,10 @@ class AppDateTimeTest {
 
     private companion object {
         val CALENDAR_TODAY: Calendar = Calendar.getInstance().apply {
-            set(2023, Calendar.APRIL, 8, 1, 1, 1)
+            set(2023, Calendar.APRIL, 8, 10, 10, 10)
             set(Calendar.MILLISECOND, 123)
+            timeZone = TimeZone.getTimeZone("GMT")
         }
-        const val ONE_WEEK_AGO = "2023-04-01T00:01:01.123Z"
+        const val ONE_WEEK_AGO = "2023-04-01T10:10:10.123Z"
     }
 }

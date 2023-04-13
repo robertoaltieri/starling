@@ -1,0 +1,7 @@
+{
+  "access_token": "[eyJhb...vc2YDk",
+  "refresh_token": "MKkQM5...hSOEGdryu",
+  "token_type": "Bearer",
+  "expires_in": 86400,
+  "scope": "account-closed:read account-holder-name:read account-holder-type:read account-identifier:read account-list:read account:read address:edit address:read attachment:read attachment:write authorising-individual:read balance:read card-control:edit card:read confirmation-of-funds:read consent:read consent:write customer:read email:edit lending:apply lending:read mandate:delete mandate:read marketing-preferences:read marketing-preferences:write marketplace-integration:read marketplace-integration:write merchant:read metadata:create metadata:edit payee:create payee:delete payee:edit payee-image:read payee-internal:read payee:read payee-transaction:read pay-bulk:authorise pay-bulk:create pay-bulk:delete pay-bulk:read payment-limit:read pay-local:create pay-local-once:create pay-local:read profile-image:edit profile-image:read receipt:read receipts:read receipt:write referrals:read savings-goal:create savings-goal:delete savings-goal:read savings-goal-transfer:create savings-goal-transfer:delete savings-goal-transfer:read scheduled-payment:read settle-up:read space:read standing-order:create standing-order:delete standing-order:read standing-order-own:read statement-csv:read statement-pdf:read subscription:delete subscription:read transaction]:edit transaction:read"
+}

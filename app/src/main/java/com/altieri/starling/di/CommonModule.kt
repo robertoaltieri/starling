@@ -7,7 +7,6 @@ import com.altieri.starling.di.DIConst.BOOLEAN_FEED
 import com.altieri.starling.di.DIConst.DEFAULT_DISPATCHER
 import com.altieri.starling.di.DIConst.SINGLE_THREAD_DISPATCHER
 import com.altieri.starling.di.DIConst.STRING_FEED
-import com.altieri.starling.di.DIConst.TOKEN_REPOSITORY_DISPATCHER
 import com.altieri.starling.transactions.presentation.AMOUNT_FORMATTER
 import com.altieri.starling.transactions.presentation.AmountFormatter
 import dagger.Module
@@ -51,10 +50,6 @@ object CommonModule {
     @Provides
     @Singleton
     fun providesFormatAmount(): AmountFormatter = AMOUNT_FORMATTER
-
-    @Provides
-    @Singleton
-    fun providesCalendarFactory(): CalendarFactory = CalendarFactory()
 
     @Provides
     @Singleton

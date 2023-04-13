@@ -1,0 +1,12 @@
+{
+  "accounts": [
+    {
+      "accountUid": "b4e32c69-214d-4d8d-a514-ad22932ace49",
+      "accountType": "PRIMARY",
+      "defaultCategory": "2ed05844-0181-45bd-963c-87c91e997746",
+      "currency": "GBP",
+      "createdAt": "2023-03-30T15:32:54.505Z",
+      "name": "Personal"
+    }
+  ]
+}

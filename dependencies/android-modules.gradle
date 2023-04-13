@@ -1,11 +1,11 @@
 android {
-    compileSdk 33
+    compileSdk = AndroidVersion.compileSdk
 
     defaultConfig {
-        minSdk 26
-        targetSdk 33
+        minSdk = AndroidVersion.minSdk
+        targetSdk = AndroidVersion.targetSdk
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.altieri.starling.HiltTestRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
 

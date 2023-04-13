@@ -1,11 +1,12 @@
 dependencies {
     implementation Dagger.hiltAndroid
-    kapt Dagger.hiltCompiler
-    androidTestImplementation Dagger.hiltAndroidTesting
-    kaptAndroidTest Dagger.hiltAndroidCompiler
-    kapt Dagger.androidxHiltCompiler
     implementation Dagger.navigationCompose
+    kapt Dagger.hiltCompiler
+    kapt Dagger.androidxHiltCompiler
+    kaptAndroidTest Dagger.hiltAndroidCompiler
+    androidTestImplementation Dagger.hiltAndroidTesting
     androidTestImplementation Dagger.navigationCompose
+    implementation Dagger.viewModelCompose
 
     implementation project(path: ':di')
 }

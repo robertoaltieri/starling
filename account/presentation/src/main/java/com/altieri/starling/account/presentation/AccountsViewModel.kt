@@ -12,8 +12,8 @@ import com.altieri.starling.di.DIConst.SINGLE_THREAD_DISPATCHER
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import javax.inject.Named
@@ -28,11 +28,15 @@ class AccountsViewModel @Inject constructor(
     private val onNewTokensUseCase: OnNewTokensUseCase,
     @Named(SINGLE_THREAD_DISPATCHER) private val dispatcher: CoroutineDispatcher
 ) : ViewModel() {
+
+    val accountState: Flow<AccountsStateUI> = _accountState
+    val savingGoalState: Flow<SavingGoalStateUI> = _savingGoalState
+
     fun updateAccount() {
         viewModelScope.launch(dispatcher + CoroutineExceptionHandler { _, _ ->
             _accountState.value = AccountsStateUI.Error
         }) {
-            if (accountState.value == AccountsStateUI.Idle) {
+            if (_accountState.value == AccountsStateUI.Idle) {
                 _accountState.value = AccountsStateUI.Loading
                 val account = updateAccountDetailsUseCase()
                 _accountState.value = AccountsStateUI.PrimaryAccounts(
@@ -72,11 +76,7 @@ class AccountsViewModel @Inject constructor(
                 expiresIn = expiresIn
             )
         }
-
     }
-
-    val accountState: StateFlow<AccountsStateUI> = _accountState
-    val savingGoalState: StateFlow<SavingGoalStateUI> = _savingGoalState
 
     private companion object {
         const val SAVING_GOAL_NAME = "SAVING_GOAL_NAME" // hardcoded for now

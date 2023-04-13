@@ -14,5 +14,4 @@ object NetworkConfigModule {
     @Provides
     @Named(APP_BASE_URL)
     fun providesAppBaseUrl(): String = ENV.PROD
-
 }

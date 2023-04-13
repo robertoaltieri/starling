@@ -5,4 +5,5 @@ dependencies {
     androidTestImplementation InstrumentationTest.espresso
     androidTestImplementation InstrumentationTest.uiTest
     androidTestImplementation InstrumentationTest.coreTesting
+    androidTestUtil InstrumentationTest.orchestrator
 }

@@ -11,5 +11,6 @@ class CheckAccessTokenUseCase(
     private val dateTimeUtil: AppDateTime
 ) {
     fun shouldRefresh() =
-        storedToken.canRefreshToken() && dateTimeUtil.time() > storedToken.expiryTime - storedToken.expiresIn * 0.3
+        storedToken.canRefreshToken() &&
+                dateTimeUtil.time() > storedToken.expiryTime - storedToken.expiresIn * 0.3
 }

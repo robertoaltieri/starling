@@ -1,5 +1,6 @@
 package com.altieri.starling
 
+import android.content.Context
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertIsEnabled
@@ -9,6 +10,7 @@ import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithText
 import androidx.navigation.testing.TestNavHostController
+import androidx.test.platform.app.InstrumentationRegistry
 import com.altieri.starling.account.bl.Account
 import com.altieri.starling.account.presentation.AccountsStateUI
 import com.altieri.starling.account.presentation.SavingGoalStateUI
@@ -17,6 +19,7 @@ import com.altieri.starling.nav.Destinations
 import com.altieri.starling.transactions.bl.TransactionsStateUI
 import com.altieri.starling.ui.composable.MainScreen
 import com.altieri.starling.ui.composable.TestTags
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
@@ -27,6 +30,13 @@ class TestSaveInGoalScreen {
     val composeTestRule = createComposeRule()
 
     private lateinit var navController: TestNavHostController
+
+    private lateinit var context: Context
+
+    @Before
+    fun setup() {
+        context = InstrumentationRegistry.getInstrumentation().targetContext
+    }
 
     @Test
     fun givenTheAppIsLoadingTheRoundUpWhenInTheSavingGoalScreenThenShowFullScreenLoadingAnimation() {

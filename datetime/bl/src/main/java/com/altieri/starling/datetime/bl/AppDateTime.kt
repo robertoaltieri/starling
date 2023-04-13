@@ -49,6 +49,6 @@ class AppDateTimeImpl(
     }
 }
 
-class CalendarFactory {
+interface CalendarFactory {
     fun newInstance(): Calendar = Calendar.getInstance()
 }

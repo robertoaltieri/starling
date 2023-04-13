@@ -1,0 +1,14 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.altieri.starling.common.framework'
+}
+
+apply from: "../../dependencies/android-modules.gradle"
+apply from: "../../dependencies/androidtest.gradle"
+
+dependencies {
+}

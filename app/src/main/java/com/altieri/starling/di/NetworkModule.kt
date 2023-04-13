@@ -3,14 +3,12 @@ package com.altieri.starling.di
 import android.content.Context
 import com.altieri.starling.BuildConfig
 import com.altieri.starling.datetime.bl.AppDateTime
-import com.altieri.starling.di.DIConst.APP_BASE_URL
 import com.altieri.starling.di.DIConst.SINGLE_THREAD_DISPATCHER
-import com.altieri.starling.di.DIConst.TOKEN_REPOSITORY_DISPATCHER
 import com.altieri.starling.networking.framework.StoredTokenImpl.Companion.storedTokenDataStore
-import com.altieri.starling.networking.domain.ENV
 import com.altieri.starling.networking.domain.StoredToken
 import com.altieri.starling.networking.api.AppApiService
 import com.altieri.starling.networking.domain.CheckAccessTokenUseCase
+import com.altieri.starling.networking.domain.ENV
 import com.altieri.starling.networking.domain.RefreshTokenUseCase
 import com.altieri.starling.networking.domain.TokenRepository
 import com.altieri.starling.networking.framework.AuthTokenRawToAuthTokenMapper
@@ -28,9 +26,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.SupervisorJob
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -52,11 +47,10 @@ object NetworkModule {
         okHttpBuilder: OkHttpClient.Builder,
         moshiConverterFactory: MoshiConverterFactory,
         @Named(LOGGING_INTERCEPTOR)
-        httpLoggingInterceptor: Interceptor,
-        @Named(APP_BASE_URL)
-        baseUrl: String
-    ): Retrofit = Retrofit.Builder()
-        .baseUrl(baseUrl)
+        httpLoggingInterceptor: Interceptor
+    ): Retrofit = Retrofit
+        .Builder()
+        .baseUrl(ENV.PROD)
         .addConverterFactory(moshiConverterFactory)
         .client(
             okHttpBuilder
@@ -124,9 +118,12 @@ object NetworkModule {
     @Singleton
     fun providesRetrofitWithMoshi(
         client: OkHttpClient,
+        @Named(DIConst.APP_BASE_URL)
+        baseUrl: String,
         moshiConverterFactory: MoshiConverterFactory
-    ): Retrofit = Retrofit.Builder()
-        .baseUrl(ENV.PROD)
+    ): Retrofit = Retrofit
+        .Builder()
+        .baseUrl(baseUrl)
         .addConverterFactory(moshiConverterFactory)
         .client(client)
         .build()

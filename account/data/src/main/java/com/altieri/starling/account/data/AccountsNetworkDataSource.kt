@@ -1,7 +1,8 @@
 package com.altieri.starling.account.data
 
 /**
- * Interface of the data source that the [AccountRepository] uses to performs the operation calling the backend API
+ * Interface of the data source that the [com.altieri.starling.account.bl.AccountRepository]
+ * uses to performs the operation calling the backend API
  */
 interface AccountsNetworkDataSource {
     suspend fun allAccounts(): List<AccountData>

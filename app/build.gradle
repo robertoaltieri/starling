@@ -38,6 +38,10 @@ android {
         }
     }
 
+    defaultConfig {
+        testInstrumentationRunner "com.altieri.starling.HiltTestRunner"
+    }
+
     testOptions {
         execution 'ANDROIDX_TEST_ORCHESTRATOR'
     }

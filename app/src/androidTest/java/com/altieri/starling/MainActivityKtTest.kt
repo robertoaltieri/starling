@@ -77,7 +77,7 @@ class MainActivityKtTest {
         }
         composeTestRule.waitWithTimeout {
             composeTestRule.onAllNodesWithText(
-                text = "0",
+                text = "0.67",
                 substring = true
             ).isDisplayed()
         }

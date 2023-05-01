@@ -5,7 +5,7 @@ android {
         minSdk = AndroidVersion.minSdk
         targetSdk = AndroidVersion.targetSdk
 
-        testInstrumentationRunner "com.altieri.starling.HiltTestRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
 

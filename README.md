@@ -33,7 +33,6 @@ Currently it doesn't refresh the tokens with an alarm.
 ## Known issues:
 - The coverage for for the integration and ui automated test is small. There are missing unit tests.
 - This implementation does not refresh the token in the background so if you don't perform network operations for too long the access token will expire
-- I'm not handling the obfuscation
 - For now all the errors are handled showing a generic error message
 - Not implemented the ssl-pinning
 - The saving goal functionalities should have had a separate view model

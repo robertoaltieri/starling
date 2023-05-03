@@ -5,6 +5,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onAllNodesWithText
+import androidx.compose.ui.test.onRoot
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
@@ -81,6 +82,10 @@ class MainActivityKtTest {
                 substring = true
             ).isDisplayed()
         }
+        assertScreenshotMatchesGolden(
+            goldenName = currentMethodName,
+            node = composeTestRule.onRoot()
+        )
     }
 
     @Test

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+  src="screenshots"
+else
+  src="$1"
+fi
+
+# Set source and destination directories
+src_dir="/data/data/com.altieri.starling/files/$src"
+dest_dir="app/src/androidTest/assets"
+echo $src_dir
+
+# List all files in the source directory on the Android Emulator
+files=$(adb exec-out run-as com.altieri.starling ls $src_dir)
+
+# Loop through each file, print the name, and copy it to the destination directory
+for file in $files; do
+  if [[ $file == *".png" ]]; then
+    echo "Copying file: $src_dir/$file"
+    adb exec-out run-as com.altieri.starling cat "$src_dir/$file" > "$dest_dir/$file"
+  fi
+done

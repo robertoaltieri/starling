@@ -51,6 +51,8 @@ android {
     }
 
     defaultConfig {
+        def screenshotsFolder = project.findProperty("screenshotsFolder") ?: "screenshots"
+        buildConfigField("String", "SCREENSHOTS_FOLDER", "\"$screenshotsFolder\"")
         testInstrumentationRunner "com.altieri.starling.HiltTestRunner"
     }
 

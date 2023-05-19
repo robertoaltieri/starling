@@ -1,0 +1,6 @@
+if [ "$#" -ne 1 ]; then
+  ./gradlew connectedCheck -PscreenshotsFolder="$1"
+else
+  ./gradlew connectedCheck
+fi
+
